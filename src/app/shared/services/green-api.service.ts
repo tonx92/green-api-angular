@@ -31,7 +31,7 @@ export class GreenApiService {
     let params = {
       chatId: chatId,
       urlFile: fileUrl,
-      fileName: 'Имя файла'
+      fileName: fileUrl.split('/').pop()
     }
     return this.httpClient.post<string>(`${this.apiUrl}/waInstance${idInstance}/sendFileByUrl/${apiTokenInstance}`, params)
   }
